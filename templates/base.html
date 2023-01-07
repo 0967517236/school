@@ -4,24 +4,48 @@
     <meta charset="UTF-8">
     <title>{% block title %} {% endblock %} - FlaskApp</title>
     <style>
+    *{
+        box-sizing:border-box;
+        padding:0;
+        margin:0;
+    }
+
+    .header{
+        position: fixed;
+        background: white;
+        min-height:60px;
+        border-bottom:1px solid #000;
+        top:0;
+        right:0;
+        left:0;
+        z-index:99;
+    }
+
+    .body-wrapper{
+        margin:0 auto;
+        width:100%;
+        max-width:960px;
+        padding-top:60px;
+    }
         .title {
             margin: 5px;
         }
 
         .content {
-            margin: 5px;
-            width: 100%;
             display: flex;
             flex-direction: row;
             flex-wrap: wrap;
         }
 
         .student {
-            flex: 20%;
+            flex-basis:calc((100% - 20px) / 3);
             padding: 10px;
-            margin: 5px;
             background-color: #f3f3f3;
             inline-size: 100%;
+            margin-bottom:16px;
+        }
+        .student:not(:nth-child(3n+3)) {
+            margin-right :10px;
         }
 
         .bio {
@@ -102,13 +126,13 @@
     </style>
 </head>
 <body>
-<nav>
+<nav class="header">
     <a href="{{ url_for('index') }}">FlaskApp</a>
     <a href="{{ url_for('create') }}">Create</a>
     <a href="#">About</a>
 </nav>
 <hr>
-<div class="content">
+<div class="body-wrapper">
     {% block content %} {% endblock %}
 </div>
 </body>
