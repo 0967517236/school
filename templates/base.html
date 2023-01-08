@@ -27,9 +27,43 @@
         max-width:960px;
         padding-top:60px;
     }
-        .title {
-            margin: 5px;
-        }
+    .form-wrapper{
+          max-width: 600px;
+          margin: auto;
+          padding:30px;
+          background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+          border-radius:8px;
+    }
+    .form-wrapper input,textarea {
+        width: 100%;
+          padding: 15px;
+          display: inline-block;
+          margin:10px 0 16px;
+          border: none;
+          width:100%;
+          resize: vertical;
+          padding:15px;
+          border-radius:15px;
+          border:0;
+          box-shadow:4px 4px 10px rgba(0,0,0,0.2);
+    }
+
+    input,textarea:focus{
+            outline:none;
+
+    }
+
+
+
+     .h1 {
+          font-size: 3em;
+          text-align: center;
+          color: #000;
+          font-weight: 400;
+          text-transform: capitalize;
+          letter-spacing: 4px;
+          font-family: 'Roboto', sans-serif;
+}
 
         .content {
             display: flex;
@@ -68,7 +102,7 @@
         }
 
          .button {
-               background-image: linear-gradient(135deg, #008aff, #86d472);
+               background: linear-gradient(135deg, #008aff, #86d472);
                border-radius: 6px;
                box-sizing: border-box;
                color: #ffffff;
@@ -84,12 +118,14 @@
                display:flex;
                align-items:center;
                justify-content:center;
+               border:none;
+               transition: all 2s;
 
              }
             .button:hover {
                color: #fff;
                cursor:pointer;
-               background-image: linear-gradient(135deg, #008aff, #000000);
+               background: linear-gradient(135deg, #008aff, #000000);
              }
              .input-btn{
                 border:none;
@@ -119,17 +155,13 @@
 
 
 
-
-
-
-
     </style>
 </head>
 <body>
 <nav class="header">
     <a href="{{ url_for('index') }}">FlaskApp</a>
     <a href="{{ url_for('create') }}">Create</a>
-    <a href="#">About</a>
+    <a href="https://www.facebook.com/luongcoder">About</a>
 </nav>
 <hr>
 <div class="body-wrapper">
